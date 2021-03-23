@@ -1,9 +1,11 @@
 class UsersController < ApplicationController
   before_action :set_user, only: %i[ show edit update destroy ]
+  # session[:current_user_id] = user.id
 
   # GET /users or /users.json
   def index
     @users = User.all
+    current_user = User.find_by_id(session[:current_user_id])
   end
 
   # GET /users/1 or /users/1.json
