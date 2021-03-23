@@ -1,24 +1,50 @@
-# README
+# Private-Events
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a private events platform created with Ruby on Rails, where users can Create or Attend multiple events. Advanced Associations from ActiveRecord were used in this project.
 
-Things you may want to cover:
+# About
 
-* Ruby version
+··············
+# Application Screenshot
+![screenshot](./assets/app_screenshot.png)
+# Built With:
+- Ruby on Rails
+- SQLite
+- Rubocop
 
-* System dependencies
+# Prerequesites:
+- Ruby
+- Rails
+- Yarn
 
-* Configuration
+# To Run:
+- Clone this repository.
+- Open the project folder where the repository was downloaded.
+- In your terminal, run the command `bundle install`. This will install all the required dependencies.
+- Thereafter, run the migrations. To do this, while in the project root folder, run the command: `rails db:migrate`.
+- Run the command `yarn install --check-files` to install all the yarn dependencies of the project.
+- Start the server with `rails s`, and visit **localhost:3000** to start writting posts.
 
-* Database creation
+# Authors
 
-* Database initialization
+👤 **Alexisbec**
+- Github: [@alexisbec](https://github.com/alexisbec)
+- Linkedin: [Alexis Varela](www.linkedin.com/in/alexbec)
+- Twitter : [@AlexisV31667779](https://twitter.com/AlexisV31667779)
 
-* How to run the test suite
+👤 **Arturo Alvarez**
+- Github: [@StarSheriff2](https://github.com/StarSheriff2)
+- Twitter: [@ArturoAlvarezV](https://twitter.com/ArturoAlvarezV)
+- Linkedin: [Arturo Alvarez](https://www.linkedin.com/in/arturoalvarezv/)
 
-* Services (job queues, cache servers, search engines, etc.)
+# 🤝 Contributing
 
-* Deployment instructions
+Contributions, issues and feature requests are welcome!
 
-* ...
+Feel free to check the issues page.
+
+# Show your support
+Give a ⭐️ if you like this project!
+
+# 📝 License
+This project is [MIT](https://github.com/alexisbec/members-only/blob/feature/LICENSE) licensed.
