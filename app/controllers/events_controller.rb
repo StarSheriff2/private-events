@@ -3,11 +3,13 @@ class EventsController < ApplicationController
 
   def index
     @events = Event.all
+    @_current_user ||= session[:current_user_id] && User.find_by(id: session[:current_user_id])
   end
 
   # GET /events/1
   def show
     @event = Event.find(params[:id])
+    @_current_user ||= session[:current_user_id] && User.find_by(id: session[:current_user_id])
   end
 
   # GET /users/new
