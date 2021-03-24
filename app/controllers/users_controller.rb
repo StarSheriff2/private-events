@@ -10,6 +10,7 @@ class UsersController < ApplicationController
   # GET /users/1 or /users/1.json
   def show
     @user = @_current_user
+    @events = @_current_user.created_events.all
   end
 
   # GET /users/new

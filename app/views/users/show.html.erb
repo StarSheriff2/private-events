@@ -1,11 +1,25 @@
+ <p id="notice"><%= notice %></p>
+<h2>Name:</h2>
+<%= @user.name %>
 <div class="flex full-view">
-  <p id="notice"><%= notice %></p>
 
-  <p>
-    <strong>Name:</strong>
-    <%= @user.name %>
-  </p>
+  <% @events.each do |event| %>
+    <div>
+      <h3>Title:</h3>
+      <%= event.title %>
 
+      <div class="event-info">
+        <div>
+          <h3>Date:</h3>
+          <%= event.date %>
+        </div>
+        <div>
+          <h3>Location:</h3>
+          <%= event.location %>
+        </div>
+      </div>
+    </div>
+  <% end %>
   <!-- <div>
     <%= link_to 'Back', users_path %>
   </div> -->
