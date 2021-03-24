@@ -1,9 +1,0 @@
-<div class="navbar">
-  <span class="logo"><%= link_to 'Events Nation', root_path %></span>
-
-  <div>
-    <span class="user-links"><%= link_to('Log In', new_session_path) %></span>
-    <span class="user-links"><%= @_current_user.name if @_current_user %></span>
-    <span class="user-links"><%= link_to('Sign Up', new_user_path) %></span>
-  </div>
-</div>
