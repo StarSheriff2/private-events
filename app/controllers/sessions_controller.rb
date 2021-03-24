@@ -2,10 +2,10 @@ class SessionsController < ApplicationController
 
   # "Create" a login, aka "log the user in"
   def create
-    if user = User.authenticate(params[:name])
+    if @user = User.where(name: params[:name])
       # Save the user ID in the session so it can be used in
       # subsequent requests
-      session[:current_user_id] = user.id
+      session[:current_user_id] = @user[0].id
       redirect_to root_url
     end
   end
