@@ -15,6 +15,7 @@ class UsersController < ApplicationController
   # GET /users/new
   def new
     @user = User.new
+    @_current_user ||= session[:current_user_id] && User.find_by(id: session[:current_user_id])
   end
 
   # GET /users/1/edit
