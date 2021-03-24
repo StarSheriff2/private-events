@@ -1,11 +1,21 @@
 class SessionsController < ApplicationController
-  def new
-  end
-  
+
+  # "Create" a login, aka "log the user in"
   def create
-    session[:current_user_id] = @user.id
+    if user = User.authenticate(params[:name])
+      # Save the user ID in the session so it can be used in
+      # subsequent requests
+      session[:current_user_id] = user.id
+      redirect_to root_url
+    end
   end
 
+  # "Delete" a login, aka "log the user out"
   def destroy
+    # Remove the user id from the session
+    session.delete(:current_user_id)
+    # Clear the memoized current user
+    @_current_user = nil
+    redirect_to root_url
   end
 end
