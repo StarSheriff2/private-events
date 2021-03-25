@@ -25,7 +25,15 @@
       <%= event.title %>
     <br>
     <% end %>
-  <!-- <div>
-    <%= link_to 'Back', users_path %>
-  </div> -->
+  <div>
+    <%= link_to 'Back', events_path %>
+  </div>
+</div>
+
+<div class="flex">
+  <h2>Upcoming Events</h2>
+  <% @attended_events.where('date > ?', Time.now).each do | event | %>
+    <%= event.title %>
+    <br>
+  <% end %>
 </div>
