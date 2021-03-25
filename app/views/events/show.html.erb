@@ -17,6 +17,13 @@
       <h3>Location:</h3>
       <%= @event.location %>
     </div>
+    <div>
+      <h3>Attendees:</h3>
+      <% @attendees.each do | attendee | %>
+        <%= User.find(attendee.id).name %>
+        <br>
+      <% end %>
+    </div>
   </div>
   <!-- <div>
     <%= link_to 'Back', users_path %>

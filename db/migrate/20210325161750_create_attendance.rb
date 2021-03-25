@@ -7,7 +7,7 @@ class CreateAttendance < ActiveRecord::Migration[6.1]
       t.timestamps
     end
 
-    add_index :attendances, :attendee_id, unique: true
-    add_index :attendances, :attended_event_id, unique: true
+    add_index :attendances, :attendee_id
+    add_index :attendances, :attended_event_id
   end
 end
