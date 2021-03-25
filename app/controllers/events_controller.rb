@@ -10,7 +10,7 @@ class EventsController < ApplicationController
   def show
     @event = Event.find(params[:id])
     @_current_user ||= session[:current_user_id] && User.find_by(id: session[:current_user_id])
-    @attendees = User.joins(:attendances)
+    @attendees = @event.attendees
   end
 
   # GET /users/new

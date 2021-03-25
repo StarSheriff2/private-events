@@ -20,7 +20,7 @@
     <div>
       <h3>Attendees:</h3>
       <% @attendees.each do | attendee | %>
-        <%= User.find(attendee.id).name %>
+        <%= attendee.name %>
         <br>
       <% end %>
     </div>
