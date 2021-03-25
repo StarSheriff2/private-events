@@ -11,6 +11,7 @@ class UsersController < ApplicationController
   def show
     @user = @_current_user
     @events = @_current_user.created_events.all
+    @attended_events = @user.attended_events
   end
 
   # GET /users/new

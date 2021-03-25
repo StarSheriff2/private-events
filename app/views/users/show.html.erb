@@ -1,8 +1,8 @@
- <p id="notice"><%= notice %></p>
+<p id="notice"><%= notice %></p>
 <h2>Name:</h2>
 <%= @user.name %>
 <div class="flex full-view">
-
+  <h2>Hosting</h2>
   <% @events.each do |event| %>
     <div>
       <h3>Title:</h3>
@@ -20,6 +20,11 @@
       </div>
     </div>
   <% end %>
+  <h2>Attending</h2>
+    <% @attended_events.each do | event | %>
+      <%= event.title %>
+    <br>
+    <% end %>
   <!-- <div>
     <%= link_to 'Back', users_path %>
   </div> -->
