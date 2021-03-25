@@ -18,6 +18,7 @@
     <div>
       <span class="user-links"><%= link_to('Log In', new_session_path) unless @_current_user %></span>
       <span class="user-links"><%= link_to(@_current_user.name, user_path(@_current_user.id)) if @_current_user %></span>
+      <span class="user-links"><%= link_to('Log Out', session_path(@_current_user.id), method: :delete) if @_current_user %></span>
       <span class="user-links"><%= link_to('Sign Up', new_user_path) unless @_current_user %></span>
     </div>
   </div>
