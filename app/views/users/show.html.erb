@@ -32,7 +32,7 @@
 
 <div class="flex">
   <h2>Upcoming Events</h2>
-  <% @attended_events.where('date > ?', Time.now).each do | event | %>
+  <% @attended_events.where('date > ?', DateTime.current.localtime).each do | event | %>
     <%= event.title %>
     <br>
   <% end %>
