@@ -1,5 +1,10 @@
 <% @events.each do |event| %>
-  <div>
-    <%= event.title %>
+  <div class="flex">
+    <h2><%= event.title %></h2>
+    <p><%= event.description %></p>
+    <div>
+      <p>Date: <%= event.date %></p>
+      <p>Location: <%= event.location %></p>
+    </div>
   </div>
 <% end%>
