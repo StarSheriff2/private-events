@@ -22,14 +22,14 @@
   <% end %>
   <div class="flex">
     <h2>Previous Events</h2>
-    <% @attended_events.past.each do | event | %>
+    <% @user.attended_events.past.each do | event | %>
       <%= event.title %>
       <br>
     <% end %>
   </div>
   <div class="flex">
     <h2>Upcoming Events</h2>
-    <% @attended_events.upcoming.each do | event | %>
+    <% @user.attended_events.upcoming.each do | event | %>
       <%= event.title %>
       <br>
     <% end %>
