@@ -11,7 +11,7 @@ describe Event, :type => :model do
       expect(@event).to be_valid
     end
 
-    it 'checks that a event can be read' do
+    it 'checks that an event can be read' do
       expect(Event.find_by_title("My_event")).to eq(@event)
     end
   end
