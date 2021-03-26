@@ -17,28 +17,12 @@ describe User, :type => :model do
   end
 
   # Association Tests
-  xit { should have_many(:attendances) }
-  xit { should have_many(:attendees) }
-  xit { should belong_to(:creator) }
+  it { should have_many(:created_events) }
+  it { should have_many(:attendances) }
+  it { should have_many(:attended_events) }
 
   # Validation Tests
-  xit "is not valid without valid attributes" do
-    expect(Event.new).to_not be_valid
-  end
-
-  describe '#title' do
-    xit { should validate_presence_of(:title) }
-  end
-
-  describe '#date' do
-    xit { should validate_presence_of(:date) }
-  end
-
-  describe '#description' do
-    xit { should validate_presence_of(:description) }
-  end
-
-  describe '#location' do
-    xit { should validate_presence_of(:location) }
+  it "is not valid without valid attributes" do
+    expect(User.new).to_not be_valid
   end
 end
