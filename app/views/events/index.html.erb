@@ -1,7 +1,7 @@
 <div class="flex">
     <h2>Previous Events</h2>
     <% @events.past.each do | event | %>
-      <h2><%= event.title %></h2>
+      <h2><%= link_to(event.title, event) %></h2>
       <p><%= event.description %></p>
       <div>
         <p>Date: <%= event.date %></p>
@@ -12,7 +12,7 @@
   <div class="flex">
     <h2>Upcoming Events</h2>
     <% @events.upcoming.each do | event | %>
-      <h2><%= event.title %></h2>
+      <h2><%= link_to(event.title, event) %></h2>
       <p><%= event.description %></p>
       <div>
         <p>Date: <%= event.date %></p>

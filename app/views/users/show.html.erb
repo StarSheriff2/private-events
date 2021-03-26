@@ -22,14 +22,14 @@
   <% end %>
   <div class="flex">
     <h2>Previous Events</h2>
-    <% @attended_events.where('date < ?', DateTime.current.localtime).each do | event | %>
+    <% @attended_events.past.each do | event | %>
       <%= event.title %>
       <br>
     <% end %>
   </div>
   <div class="flex">
     <h2>Upcoming Events</h2>
-    <% @attended_events.where('date > ?', DateTime.current.localtime).each do | event | %>
+    <% @attended_events.upcoming.each do | event | %>
       <%= event.title %>
       <br>
     <% end %>
