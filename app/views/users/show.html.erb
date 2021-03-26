@@ -20,20 +20,22 @@
       </div>
     </div>
   <% end %>
-  <h2>Attending</h2>
-    <% @attended_events.each do | event | %>
+  <div class="flex">
+    <h2>Previous Events</h2>
+    <% @attended_events.where('date < ?', DateTime.current.localtime).each do | event | %>
       <%= event.title %>
-    <br>
+      <br>
     <% end %>
+  </div>
+  <div class="flex">
+    <h2>Upcoming Events</h2>
+    <% @attended_events.where('date > ?', DateTime.current.localtime).each do | event | %>
+      <%= event.title %>
+      <br>
+    <% end %>
+  </div>
   <div>
     <%= link_to 'Back', events_path %>
   </div>
 </div>
 
-<div class="flex">
-  <h2>Upcoming Events</h2>
-  <% @attended_events.where('date > ?', DateTime.current.localtime).each do | event | %>
-    <%= event.title %>
-    <br>
-  <% end %>
-</div>

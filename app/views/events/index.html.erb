@@ -1,10 +1,23 @@
-<% @events.each do |event| %>
-  <div class="flex">
-    <h2><%= event.title %></h2>
-    <p><%= event.description %></p>
-    <div>
-      <p>Date: <%= event.date %></p>
-      <p>Location: <%= event.location %></p>
-    </div>
+<div class="flex">
+    <h2>Previous Events</h2>
+    <% @events.where('date < ?', DateTime.current.localtime).each do | event | %>
+      <h2><%= event.title %></h2>
+      <p><%= event.description %></p>
+      <div>
+        <p>Date: <%= event.date %></p>
+        <p>Location: <%= event.location %></p>
+      </div>
+    <% end %>
   </div>
-<% end%>
+  <div class="flex">
+    <h2>Upcoming Events</h2>
+    <% @events.where('date > ?', DateTime.current.localtime).each do | event | %>
+      <h2><%= event.title %></h2>
+      <p><%= event.description %></p>
+      <div>
+        <p>Date: <%= event.date %></p>
+        <p>Location: <%= event.location %></p>
+      </div>
+    <% end %>
+  </div>
+  <div>
