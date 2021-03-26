@@ -25,8 +25,8 @@
       <% end %>
     </div>
   </div>
-    <% if @event.date > DateTime.current.localtime %>
-      <button>Enroll</button>
+    <% if @event.date > DateTime.current.localtime && @_current_user && @attendees.exists?(@_current_user.id) != true && @_current_user.id != @event.creator_id %>
+      <span><%= link_to('Register', attendances_path(attendee_id: @_current_user.id, attended_event_id: @event.id), method: :post) %></span>
     <% end %>
   <div>
     <%= link_to 'Back', root_path %>
