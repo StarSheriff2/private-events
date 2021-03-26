@@ -1,10 +1,12 @@
 <%= form_with url: "/sessions", method: :post do |form| %>
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
-  </div>
+  <div class="flex">
+    <div class="field">
+      <%= form.label :name %>
+      <%= form.text_field :name %>
+    </div>
 
-  <div class="actions">
-    <%= form.submit %>
+    <div class="actions pink-button">
+      <%= form.submit %>
+    </div>
   </div>
 <% end %>

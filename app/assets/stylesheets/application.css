@@ -26,6 +26,20 @@ body {
   flex-direction: column;
 }
 
+.flex-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+
+.flex-start {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-direction: column;
+}
+
 .full-view {
   height: 100vh;
 }
@@ -56,4 +70,63 @@ body {
   margin: 0.8em;
   padding: 0.4em 1em;
   border-radius: 5px;
+}
+
+.event-index {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  margin-top: 3em;
+}
+
+.pink-border {
+  border: 2px lightcoral solid;
+  border-radius: 5px;
+  padding: 2em;
+  margin: 2em;
+}
+
+.title {
+  font-size: 2em;
+  color: lightcoral;
+}
+
+.title-links a {
+  text-decoration: none;
+  color: lightcoral;
+}
+
+.new-event {
+  margin-top: 20em;
+}
+
+.show-user {
+  max-width: 100vw;
+}
+
+.pink-button input {
+  margin: 1em;
+  padding: 1em;
+  background-color: lightcoral;
+  border-radius: 5px;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  font-size: 1.2em;
+}
+
+.name-title {
+  margin-right: 2em;
+}
+
+.name {
+  font-size: 2.5em;
+  color: lightcoral;
+  padding: 0.8em;
+  border: 1px lightcoral solid;
+  border-radius: 5px;
+}
+
+.column {
+  margin: 3em 15em;
 }

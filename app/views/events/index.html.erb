@@ -1,23 +1,28 @@
-<div class="flex">
-    <h2>Previous Events</h2>
-    <% @events.past.each do | event | %>
-      <h2><%= link_to(event.title, event) %></h2>
-      <p><%= event.description %></p>
-      <div>
-        <p>Date: <%= event.date %></p>
-        <p>Location: <%= event.location %></p>
+<div class="event-index">
+  <div class="flex">
+    <h2 class="title">Previous Events</h2>
+      <% @events.past.each do | event | %>
+      <div class="pink-border">
+        <h2 class="title-links"><%= link_to(event.title, event) %></h2>
+        <p><%= event.description %></p>
+        <div>
+          <p>Date: <%= event.date %></p>
+          <p>Location: <%= event.location %></p>
+        </div>
       </div>
     <% end %>
   </div>
   <div class="flex">
-    <h2>Upcoming Events</h2>
+    <h2 class="title">Upcoming Events</h2>
     <% @events.upcoming.each do | event | %>
-      <h2><%= link_to(event.title, event) %></h2>
-      <p><%= event.description %></p>
-      <div>
-        <p>Date: <%= event.date %></p>
-        <p>Location: <%= event.location %></p>
+      <div class="pink-border">
+        <h2 class="title-links"><%= link_to(event.title, event) %></h2>
+        <p><%= event.description %></p>
+        <div>
+          <p>Date: <%= event.date %></p>
+          <p>Location: <%= event.location %></p>
+        </div>
       </div>
     <% end %>
   </div>
-  <div>
+</div>
