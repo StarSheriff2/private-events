@@ -1,24 +1,27 @@
 require 'rails_helper'
 
 describe Event, :type => :model do
+  # Association Tests
   it { should have_many(:attendances) }
+  it { should have_many(:attendees) }
+  it { should belong_to(:creator) }
+
+  # Validation Tests
+  describe '#title' do
+    it { should validate_presence_of(:title) }
+  end
+
+  describe '#date' do
+    it { should validate_presence_of(:date) }
+  end
+
+  describe '#description' do
+    it { should validate_presence_of(:description) }
+  end
+
+  describe '#location' do
+    it { should validate_presence_of(:location) }
+  end
 end
-# describe Check do
-#   describe '#start' do
-#     subject(:check_start) { described_class.new }
-#     let(:file) { instance_double(File) }
 
-#     it 'sends each_line' do
-#       expect(file).to receive(:each_line)
-#       check_start.start(file)
-#     end
 
-#     context 'when file has 1 line' do
-#       it 'calls check_line once' do
-#         expect(check_start).to receive(:check_line).once
-#         file = StringIO.new('1')
-#         check_start.start(file)
-#       end
-#     end
-#   end
-# end
