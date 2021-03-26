@@ -4,9 +4,23 @@ This is a private events platform created with Ruby on Rails, where users can Cr
 
 # About
 
-··············
+We created an Events Web-App based on the functionality of Eventbrite site. For this, we had to work with Active Record associations, validations, and session cookies for user authentication.
+
+What you can do on the app:
+- Create users and login with your user
+- Access to the information of each event
+- Create a registration for an event while you are logged in
+- Create events as a registered user
+
+In this project we:
+- Created models, views, and controllers for users and events
+- Made validations for the user inputs
+- Created a controller and a model for the attendance of each event
+- Worked with associations between users, events, and attendances
+
 # Application Screenshot
 ![screenshot](./assets/app_screenshot.png)
+
 # Built With:
 - Ruby on Rails
 - SQLite
