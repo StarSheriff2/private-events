@@ -38,6 +38,7 @@ body {
   justify-content: start;
   align-items: center;
   flex-direction: column;
+  margin-top: 5em;
 }
 
 .full-view {
@@ -104,8 +105,9 @@ body {
   max-width: 100vw;
 }
 
-.pink-button input {
-  margin: 1em;
+.pink-button input,
+.pink-button a {
+  margin: 3em;
   padding: 1em;
   background-color: lightcoral;
   border-radius: 5px;
@@ -129,4 +131,13 @@ body {
 
 .column {
   margin: 3em 15em;
+}
+
+.info {
+  font-size: 2em;
+  margin: 1em 2em;
+}
+
+.m-t {
+  margin-top: 3em;
 }

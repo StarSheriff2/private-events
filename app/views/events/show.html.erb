@@ -1,34 +1,36 @@
 <p id="notice"><%= notice %></p>
-<div class="flex full-view">
-  <div>
-    <h2>Event:</h2>
-    <%= @event.title %>
+<div class="flex-start full-view">
+  <div class="flex">
+    <h2 class="title">Event:</h2>
+    <span class="name"><%= @event.title %></span>
   </div>
-  <div class="event-info">
-    <div>
-      <h3>Description:</h3>
-      <%= @event.description %>
+  <div class="event-info flex">
+    <div class="flex">
+      <h3 class="title">Description:</h3>
+      <span class="info"><%= @event.description %></span>
     </div>
-    <div>
-      <h3>Date:</h3>
-      <%= @event.date %>
+    <div class="flex-row">
+      <div class="flex">
+        <h3 class="title">Date:</h3>
+        <span class="info"><%= @event.date %></span>
+      </div>
+      <div class="flex">
+          <h3 class="title">Location:</h3>
+          <span class="info"><%= @event.location %></span>
+      </div>
     </div>
-    <div>
-      <h3>Location:</h3>
-      <%= @event.location %>
-    </div>
-    <div>
-      <h3>Attendees:</h3>
+    <div class="flex">
+      <h3 class="title">Attendees:</h3>
       <% @attendees.each do | attendee | %>
-      <%= attendee.name %>
+      <span class="info"><%= attendee.name %></span>
       <br>
       <% end %>
     </div>
   </div>
     <% if @event.date > DateTime.current.localtime && @_current_user && @attendees.exists?(@_current_user.id) != true && @_current_user.id != @event.creator_id %>
-      <span><%= link_to('Register', attendances_path(attendee_id: @_current_user.id, attended_event_id: @event.id), method: :post) %></span>
+      <span class="pink-button"><%= link_to('Register', attendances_path(attendee_id: @_current_user.id, attended_event_id: @event.id), method: :post) %></span>
     <% end %>
-  <div>
-    <%= link_to 'Back', root_path %>
+  <div class="m-t">
+    <span class="title-links"><%= link_to 'Back', root_path %></span>
   </div>
 </div>
