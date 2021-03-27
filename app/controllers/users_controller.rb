@@ -3,8 +3,11 @@ class UsersController < ApplicationController
 
   # GET /users/1 or /users/1.json
   def show
-    @user = @set_user
-    @events = @set_user.created_events.all
+    if set_user
+      @user = @set_user
+    else
+      redirect_to new_user_path
+    end
   end
 
   # GET /users/new
