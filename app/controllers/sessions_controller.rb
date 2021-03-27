@@ -1,5 +1,4 @@
 class SessionsController < ApplicationController
-
   # "Create" a login, aka "log the user in"
   def create
     if @user = User.where(name: params[:name])

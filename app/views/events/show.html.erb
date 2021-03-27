@@ -27,8 +27,8 @@
       <% end %>
     </div>
   </div>
-    <% if @event.date > DateTime.current.localtime && @_current_user && @attendees.exists?(@_current_user.id) != true && @_current_user.id != @event.creator_id %>
-      <span class="pink-button"><%= link_to('Register', attendances_path(attendee_id: @_current_user.id, attended_event_id: @event.id), method: :post) %></span>
+    <% if @event.date > DateTime.current.localtime && current_user && @attendees.exists?(current_user.id) != true && current_user.id != @event.creator_id %>
+      <span class="pink-button"><%= link_to('Register', attendances_path(attendee_id: current_user.id, attended_event_id: @event.id), method: :post) %></span>
     <% end %>
   <div class="m-t">
     <span class="title-links"><%= link_to 'Back', root_path %></span>

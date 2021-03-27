@@ -1,8 +1,8 @@
 require 'rails_helper'
 
-describe Attendance, :type => :model do
+describe Attendance, type: :model do
   # Model Tests
-  context "check CRUD actions work" do
+  context 'check CRUD actions work' do
     before do
       @user = User.create(name: 'John Smith')
       @event = Event.new
@@ -26,5 +26,3 @@ describe Attendance, :type => :model do
   it { should belong_to(:attendee) }
   it { should belong_to(:attended_event) }
 end
-
-

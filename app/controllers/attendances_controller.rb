@@ -4,7 +4,9 @@ class AttendancesController < ApplicationController
 
     respond_to do |format|
       if @attendance.save
-        format.html { redirect_to event_path(@attendance.attended_event_id), notice: "You registered succesfully to this event." }
+        format.html do
+          redirect_to event_path(@attendance.attended_event_id), notice: 'You registered succesfully to this event.'
+        end
       else
         format.html { render :new, status: :unprocessable_entity }
       end

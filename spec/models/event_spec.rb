@@ -1,10 +1,11 @@
 require 'rails_helper'
 
-describe Event, :type => :model do
+describe Event, type: :model do
   # Model Tests
-  context "check CRUD actions work" do
+  context 'check CRUD actions work' do
     before do
-      @event = Event.create(title: 'My_event', description: 'description', location: 'location', date: DateTime.now, creator: User.new)
+      @event = Event.create(title: 'My_event', description: 'description', location: 'location', date: DateTime.now,
+                            creator: User.new)
     end
 
     it 'checks that an event can be created' do
@@ -12,7 +13,7 @@ describe Event, :type => :model do
     end
 
     it 'checks that an event can be read' do
-      expect(Event.find_by_title("My_event")).to eq(@event)
+      expect(Event.find_by_title('My_event')).to eq(@event)
     end
   end
 
@@ -22,10 +23,10 @@ describe Event, :type => :model do
   it { should belong_to(:creator) }
 
   # Validation Tests
-  it "is not valid without valid attributes" do
+  it 'is not valid without valid attributes' do
     expect(Event.new).to_not be_valid
   end
-  context "it is valid with valid attributes" do
+  context 'it is valid with valid attributes' do
     describe '#title' do
       it { should validate_presence_of(:title) }
     end
@@ -43,5 +44,3 @@ describe Event, :type => :model do
     end
   end
 end
-
-
