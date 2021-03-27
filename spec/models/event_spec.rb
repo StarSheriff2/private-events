@@ -25,21 +25,22 @@ describe Event, :type => :model do
   it "is not valid without valid attributes" do
     expect(Event.new).to_not be_valid
   end
+  context "it is valid with valid attributes" do
+    describe '#title' do
+      it { should validate_presence_of(:title) }
+    end
 
-  describe '#title' do
-    it { should validate_presence_of(:title) }
-  end
+    describe '#date' do
+      it { should validate_presence_of(:date) }
+    end
 
-  describe '#date' do
-    it { should validate_presence_of(:date) }
-  end
+    describe '#description' do
+      it { should validate_presence_of(:description) }
+    end
 
-  describe '#description' do
-    it { should validate_presence_of(:description) }
-  end
-
-  describe '#location' do
-    it { should validate_presence_of(:location) }
+    describe '#location' do
+      it { should validate_presence_of(:location) }
+    end
   end
 end
 

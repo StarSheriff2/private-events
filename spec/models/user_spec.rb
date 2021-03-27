@@ -25,8 +25,9 @@ describe User, :type => :model do
   it "is not valid without valid attributes" do
     expect(User.new).to_not be_valid
   end
-
-  describe '#name' do
-    it { should validate_presence_of(:name) }
+  context "it is valid with valid attributes" do
+    describe '#name' do
+      it { should validate_presence_of(:name) }
+    end
   end
 end
