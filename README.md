@@ -81,4 +81,4 @@ Feel free to check the issues page.
 Give a ⭐️ if you like this project!
 
 # 📝 License
-This project is [MIT](https://github.com/alexisbec/members-only/blob/feature/LICENSE) licensed.
+This project is [MIT](https://github.com/StarSheriff2/private-events/blob/feature-branch-app/LICENSE) licensed.
