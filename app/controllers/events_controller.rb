@@ -22,6 +22,8 @@ class EventsController < ApplicationController
 
     respond_to do |format|
       if @event.save
+        @attendance = Attendance.new(attended_event_id: @event.id, attendee_id: @event.creator_id)
+        @attendance.save
         format.html { redirect_to @event, notice: 'The event was successfully created.' }
       else
         format.html { render :new, status: :unprocessable_entity }
