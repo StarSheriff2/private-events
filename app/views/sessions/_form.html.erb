@@ -1,0 +1,12 @@
+<%= form_with url: "/sessions", method: :post do |form| %>
+  <div class="flex">
+    <div class="field">
+      <%= form.label :name %>
+      <%= form.text_field :name %>
+    </div>
+
+    <div class="actions pink-button">
+      <%= form.submit 'Log in' %>
+    </div>
+  </div>
+<% end %>

@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+<div class="flex-start full-view">
+  <div class="flex">
+    <h2 class="title">Event:</h2>
+    <span class="name"><%= @event.title %></span>
+  </div>
+  <div class="flex">
+    <h2 class="title">Created by: </h2>
+    <span class="name"><%= @event.creator.name %></span>
+  </div>
+  <div class="event-info flex">
+    <div class="flex">
+      <h3 class="title">Description:</h3>
+      <span class="info"><%= @event.description %></span>
+    </div>
+    <div class="flex-row">
+      <div class="flex">
+        <h3 class="title">Date:</h3>
+        <span class="info"><%= @event.date %></span>
+      </div>
+      <div class="flex">
+          <h3 class="title">Location:</h3>
+          <span class="info"><%= @event.location %></span>
+      </div>
+    </div>
+    <div class="flex">
+      <h3 class="title">Attendees:</h3>
+      <% @attendees.each do | attendee | %>
+      <span class="info"><%= attendee.name %></span>
+      <br>
+      <% end %>
+    </div>
+  </div>
+    <% if @event.date > DateTime.current.localtime && current_user && @attendees.exists?(current_user.id) != true %>
+      <span class="pink-button"><%= link_to('Register', attendances_path(attendee_id: current_user.id, attended_event_id: @event.id), method: :post) %></span>
+    <% end %>
+  <div class="m-t">
+    <span class="title-links"><%= link_to 'Back', root_path %></span>
+  </div>
+</div>
