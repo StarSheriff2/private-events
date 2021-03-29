@@ -1,16 +1,29 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>PrivateEvents</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+<head>
+  <title>Private Events</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
 
-  <body>
-    <%= yield %>
-  </body>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
+
+<body>
+  <div class="navbar">
+    <span class="logo"><%= link_to 'Events Nation', root_path %></span>
+
+    <div>
+      <span class="user-links"><%= link_to('Create an Event', new_event_path) if current_user %></span>
+      <span class="user-links"><%= link_to('Log In', new_session_path) unless current_user %></span>
+      <span class="user-links"><%= link_to(current_user.name, user_path(current_user.id)) if current_user %></span>
+      <span class="user-links"><%= link_to('Log Out', session_path(current_user.id), method: :delete) if current_user %></span>
+      <span class="user-links"><%= link_to('Sign Up', new_user_path) unless current_user %></span>
+    </div>
+  </div>
+  <%= yield %>
+</body>
+
 </html>
